@@ -153,11 +153,16 @@ if (movies[0].title == "Hannah") {
 
 // 25. Log the number of actors in all three movies one by one
 for (let movie of movies) {
-  console.log(movie.actors.length, "Question 25");
+  for (let actor of movie.actors) {
+    console.log(actor, "Question 25");
 }
+}
+
 // 26. Log the number of genres in all three movies one by one
 for (let movie of movies) {
-  console.log(movie.genres.length, "Question 26");
+  for (let genre of movie.genres) {
+    console.log(genre, "Question 26");
+  }
 }
 
 // 27. Log the name of all the movies with more than 1 genre
@@ -183,9 +188,49 @@ for (let movie of movies) {
 }
 
 
-// 30. Log the name of all the movies with year `2018`
+//30. Log the name of all the movies with year `2018`
 for (let movie of movies) {
   if (movie.year === 2018 ) {
     console.log(movie.title, "Question 30");
   }
 }
+
+
+//31. 
+
+let allTitle = [];
+
+for (let movie of movies) {
+  allTitle.push(movie.title);
+}
+console.log(allTitle, "Question 31");
+
+
+// 32
+let allGenres = [];
+
+for (let movie of movies) {
+  for ( let genre of movie.genres) {
+    allGenres.push(genre);
+  }
+  
+}
+console.log(allGenres, "Question 32");
+
+
+// 33 
+let allActors = [];
+
+for (let movie of movies) {
+  for ( let actor of movie.actors) {
+    allActors.push(actor);
+  }
+  
+}
+console.log(allActors, "Question 33");
+
+// 34 
+
+console.log (allActors.length, "Question 34");
+console.log (allGenres.length, "Question 34");
+console.log (allTitle.length, "Question 34");
