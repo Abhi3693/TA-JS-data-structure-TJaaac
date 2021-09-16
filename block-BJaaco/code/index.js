@@ -4,29 +4,35 @@ let userIds = [1230, 234, 1278, 984, 763, 900];
 
 
 // 1. Add all the values of numbers and userIds array into the new newly created array named `collection`
-let collection = [numbers, userIds]
+let collection = [];
 
+for (let  num of numbers ) {
+ collection.push(num)
+} 
 
+for (let  user of userIds ) {
+  collection.push(user)
+ } 
+console.log(collection);
 // 2. Add all the even numbers from both arrays numbers and userIds into a newly created array named `evenCollection`
 let evenCollection = [];
 let oddCollection = [];
 
-for (let number of numbers) {
-  if (number % 2 == 0) {
-    evenCollection.push(number);    
-   } else {
-    oddCollection.push(number);
-  }
-} 
-for (let user of userIds) {
-  if (user % 2 == 0) {
-    evenCollection.push(user);
-  } else {
-    oddCollection.push(user);
-  }
+for (let num of collection) {
+  if (num % 2 == 0) {
+    evenCollection.push(num);    
+   } 
 } 
 
+
 // 3. Add all the odd numbers from both arrays numbers and userIds into a newly created array named `oddCollection`
+
+for (let num of collection) {
+  if (num % 2 !== 0) {
+    oddCollection.push(num);
+   } 
+} 
+
 console.log(oddCollection, "oddCollection")
 console.log(evenCollection, "evenCollection")
 
@@ -47,7 +53,9 @@ console.log(evenCollection, "evenCollection")
     times(5); // ['test', 'test', 'test', 'test', 'test']
 */
 
-function times(a , b) {
+function times(a , b = "test") {
+
+  if ( a <= 0 ) return [];
   let result = [];
   for (let i = 0; i < a; i++) {
     result.push(b);
@@ -58,7 +66,7 @@ function times(a , b) {
 console.log(times(5, 'c')); // ['c', 'c', 'c', 'c', 'c']
 console.log(times(2, 'a')); // ['a', 'a']
 console.log(times(0)); // []
-console.log(times(5, "test")); // ['test', 'test', 'test', 'test', 'test']
+console.log(times(5)); // ['test', 'test', 'test', 'test', 'test']
 
 /*
 
@@ -81,7 +89,6 @@ console.log(times(5, "test")); // ['test', 'test', 'test', 'test', 'test']
      } 
      return newRevert ;
    } 
-   console.log(revert([1, 2, 3, 4]));
 //Uncomment the code below and test the output
 console.log(revert([1, 2, 3, 4])); // [4, 3, 2, 1]
 console.log(revert(['a', 'd', 'c', 'b'])); // ['b', 'c', 'd', 'a']
