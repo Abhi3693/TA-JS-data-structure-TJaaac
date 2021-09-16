@@ -24,11 +24,9 @@ Answer the following with reason after going through the above code:
 2. What's will be the value of `person1` and `person2` ? Explain with reason. Draw the memory representation diagram.
 
 <!-- To add this image here use ![name](./hello.jpg) -->
-![name](./hello.jpg)
+![name](./hello.jpg);
 
-let name = "sandip";
-
-name = "Abhijeet";
+![name](./hello2.jpg);
 
 
 ```js
@@ -37,8 +35,8 @@ function personDetails(person) {
   person = { name: 'John', age: 50 };
   return person;
 }
-var person1 = { name: 'Alex', age: 30 }; // this creating new variable of person1 so has its own element;
-var person2 = personDetails(person1); // person2 variable get reference from personDetails(person) and gets its value;
+var person2 = personDetails(person1); // person function will get reference from personDetails(person1) and and there it will change the age that is 25 and it has to give return that person object;
+var person1 = { name: 'Alex', age: 30 }; // this creating new variable of person1 it has passed by person2 and there it will change person.age to 25 and name will remain same;
 console.log(person1);
 console.log(person2);
 ```
