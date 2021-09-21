@@ -10,12 +10,12 @@ let person2 = person;
 
 person.firstName = 'Arya';
 
-console.log(person2.firstName); // output
-console.log(person.firstName); // output
-console.log(person.lastName); // output
-console.log(person == person2); // output
-console.log(person === person2); // output
-console.log(person.lastName === person2.lastName); // output
+console.log(person2.firstName); // "Arya" = both variables have same reference .
+console.log(person.firstName); // "Arya" = both variables have same reference .
+console.log(person.lastName); // "Doe" = both variables have same reference .
+console.log(person == person2); // true  both variables have same reference .
+console.log(person === person2); // true = both variables have same reference .
+console.log(person.lastName === person2.lastName); // true = both variables have same reference .
 ```
 
 2. Write the output with reason:
@@ -37,17 +37,17 @@ let personTwo = { ...person };
 person.firstName = 'Arya';
 person.city = 'Navada';
 
-console.log(personTwo.firstName); // output
-console.log(person.firstName); // output
-console.log(personTwo.lastName); // output
-console.log(person.firstName === personTwo.firstName); // output
-console.log(person == personTwo); // output
-console.log(person === personTwo); // output
-console.log(person.address === personTwo.address); // output
-console.log(person.address == personTwo.address); // output
-console.log(personTwo.address.city); // output
-console.log(person.address.city); // output
-console.log(person.address.city == personTwo.address.city); // output
+console.log(personTwo.firstName); // "John" = It is referencing to adddress persontwo.
+console.log(person.firstName); // "Arya" = It is referencing to adddress person.
+console.log(personTwo.lastName); // "Doe" = It is referencing to adddress persontwo.
+console.log(person.firstName === personTwo.firstName); // false = both have different address reference.
+console.log(person == personTwo); // false = both have different address reference.
+console.log(person === personTwo); // false = both have different address reference.
+console.log(person.address === personTwo.address); // true = both have same address.
+console.log(person.address == personTwo.address); // true = both have same address.
+console.log(personTwo.address.city); // "San Jose" = It is referencing to adddress persontwo.
+console.log(person.address.city); // "San Jose" = It is referencing to adddress person.
+console.log(person.address.city == personTwo.address.city); // true = both have same address reference.
 ```
 
 3. Write the output with reason:
@@ -69,17 +69,17 @@ let personTwo = { ...person, address: { ...person.address } };
 person.firstName = 'Arya';
 person.city = 'Navada';
 
-console.log(personTwo.firstName); // output
-console.log(person.firstName); // output
-console.log(personTwo.lastName); // output
-console.log(person.firstName === personTwo.firstName); // output
-console.log(person == personTwo); // output
-console.log(person === personTwo); // output
-console.log(person.address === personTwo.address); // output
-console.log(person.address == personTwo.address); // output
-console.log(personTwo.address.city); // output
-console.log(person.address.city); // output
-console.log(person.address.city == personTwo.address.city); // output
+console.log(personTwo.firstName); // "John" = It has persontwo reference.
+console.log(person.firstName); // "Arya" = It has person reference.
+console.log(personTwo.lastName); // "Doe" = It has persontwo reference. 
+console.log(person.firstName === personTwo.firstName); // false = both have different address reference.
+console.log(person == personTwo); // false = both have different address reference.
+console.log(person === personTwo); // false = both have different address reference.
+console.log(person.address === personTwo.address); // false = both have different address reference.
+console.log(person.address == personTwo.address); // false = both have different address reference.
+console.log(personTwo.address.city); // "san Jose" = It has persontwo reference.
+console.log(person.address.city); // "san Jose" = It has person reference.
+console.log(person.address.city == personTwo.address.city); // false = both have different address reference.
 ```
 
 4. Clone the `blogs` variable into a new variable named `clonedBlogs`
@@ -103,7 +103,7 @@ let blogs = [
   },
 ];
 
-// Your code goes here
+let clonedBlogs = [...blogs];
 ```
 
 5. Clone the `question` variable into a new variable named `questionClone`
@@ -128,7 +128,7 @@ var questions = [
   },
 ];
 
-// Your code goes here
+let questionClone = [...questions];
 ```
 
 6. Clone the `allBlogs` variable into a new variable named `allBlogsClone`
@@ -155,7 +155,10 @@ var allBlogs = {
   ],
 };
 
-// Your code goes here
+let allBlogsClone = {
+  ...allBlogs,
+  author : {...allBlogs.author},
+  comments : [...allBlogs.comments]}
 ```
 
 7. Clone the `person` variable into a new variable named `clonedPerson`
@@ -188,14 +191,14 @@ let person = [
   },
 ];
 
-// Your code goes here
+let clonedPerson = [...person];
 ```
 
 8. Write a function named `cloneObject` that accepts an object and returns the clone of the object
 
 ```js
 function cloneObject() {
-  // your code
+  return {...user};
 }
 
 // Run the test below to check your function
